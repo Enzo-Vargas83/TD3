@@ -18,8 +18,8 @@ if (!empty($_POST)) {
 
         $query = "SELECT * FROM user WHERE mail = '".$_POST['email']."'";
         $queryResult = mysqli_query($dbLink, $query);
-        var_dump(mysqli_num_rows($queryResult));
-        if(mysqli_num_rows($queryResult) == 0){
+        var_dump($queryResult);
+
             $query1 = 'INSERT INTO user (mail, Num_tel) VALUES (\'' . $email . '\', \''
                 . $num . '\')';
 
@@ -30,7 +30,7 @@ if (!empty($_POST)) {
                 // Affiche la requête envoyée.
                 echo 'Requête : ' . $query . '<br/>';
                 exit();
-            }
+
         }
 
     } else {
