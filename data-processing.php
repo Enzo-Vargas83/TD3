@@ -19,7 +19,7 @@ if (!empty($_POST)) {
         $query = "SELECT * FROM user WHERE mail = '".$_POST['email']."'";
         $queryResult = mysqli_query($dbLink, $query);
         var_dump($queryResult);
-        if($queryResult == false){
+        if(mysqli_num_rows($queryResult) == 0){
             $query1 = 'INSERT INTO user (mail, Num_tel) VALUES (\'' . $email . '\', \''
                 . $num . '\')';
 
