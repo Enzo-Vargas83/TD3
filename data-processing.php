@@ -14,11 +14,12 @@ if (!empty($_POST)) {
             exit();
         }
         fputs($file, 'id : ' . $id . ', email : ' . $email . PHP_EOL);
-        fclose($file);
+        fclose($file); ?>
+        <meta http-equiv="refresh" content="0; url=index.php">
+        <?php
     } else {
         echo '<br/><strong>Bouton non géré !</strong><br/>';
     }
 }
 ?>
 
-<meta http-equiv="refresh" content="0; url=index.php">
