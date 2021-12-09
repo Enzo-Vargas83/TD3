@@ -1,4 +1,8 @@
 <?php
+header('Location : index.php');
+exit();
+?>
+<?php
 if (!empty($_POST)) {
     $action = $_POST['action'];
     $id = $_POST['identifiant'];
@@ -19,8 +23,4 @@ if (!empty($_POST)) {
         echo '<br/><strong>Bouton non géré !</strong><br/>';
     }
 }
-?>
-<?php
-    header('Location : index.php');
-    exit();
 ?>
