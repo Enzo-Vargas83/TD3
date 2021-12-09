@@ -16,7 +16,7 @@ if (!empty($_POST)) {
         <?php
         $dbLink = mysqli_connect('mysql-vargas.alwaysdata.net', 'vargas', 'lolo83520', 'vargas_td2');
 
-        $query = "Select Identifiant, mdp From User";
+        $query = "SELECT * FROM users WHERE Identifiant = '".$_POST['identifiant']."'";
         $queryResult = mysqli_query($query, $dbLink);
         var_dump($queryResult);
 
