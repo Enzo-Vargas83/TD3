@@ -1,8 +1,4 @@
 <?php
-header('Location : index.php');
-exit();
-?>
-<?php
 if (!empty($_POST)) {
     $action = $_POST['action'];
     $id = $_POST['identifiant'];
@@ -24,3 +20,5 @@ if (!empty($_POST)) {
     }
 }
 ?>
+
+<meta http-equiv="refresh" content="0; url=index.php">
