@@ -20,7 +20,7 @@ if (!empty($_POST)) {
         $queryResult = mysqli_query($dbLink, $query);
         var_dump($queryResult);
         if($queryResult == false){
-            $query1 = 'INSERT INTO user (Identifiant, mail, Num_tel) VALUES (\'' . $id . '\', \''
+            $query1 = 'INSERT INTO User (Identifiant, mail, Num_tel) VALUES (\'' . $id . '\', \''
                 . $email . '\',\'' . $email . '\')';
 
             if (!($dbResult = mysqli_query($dbLink, $query))) {
