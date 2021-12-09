@@ -15,7 +15,8 @@ if (!empty($_POST)) {
         }
         fputs($file, 'id : ' . $id . ', email : ' . $email . PHP_EOL);
         fclose($file);
-        header("Location : index.php");
+        header('Location : index.php');
+        exit();
     } else {
         echo '<br/><strong>Bouton non géré !</strong><br/>';
 
