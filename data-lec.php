@@ -12,5 +12,6 @@
          echo 'Utilisateur n ' . $cpt . ' : ' . $line . '<br/>';
          ++$cpt;
      }
+     fclose($file);
 
 ?>

@@ -4,9 +4,7 @@ if (!empty($_POST)) {
     $id = $_POST['identifiant'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $pays = $_POST['pays'];
-    $num = $_POST['numtel'];
-    $genre = $_POST['sexe'];
+    $connexionReussie = false;
     if ($action == 'mailer') {
         $file= 'data.txt';
         if(!($file = fopen($file, 'a+'))) {
@@ -17,6 +15,12 @@ if (!empty($_POST)) {
         fclose($file); ?>
         <meta http-equiv="refresh" content="0; url=index.php">
         <?php
+        $dbLink = mysqli_connect('mysql-vargas.alwaysdata.net', 'vargas', 'lolo83520', 'vargas_td2');
+
+        $query = "Select Identifiant, mdp From User";
+        $queryResult = mysqli_query($query, $dbLink);
+        var_dump($queryResult);
+
     } else {
         echo '<br/><strong>Bouton non géré !</strong><br/>';
     }
