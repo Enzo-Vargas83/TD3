@@ -16,12 +16,12 @@ if (!empty($_POST)) {
         <?php
         $dbLink = mysqli_connect('mysql-vargas.alwaysdata.net', 'vargas', 'lolo83520', 'vargas_td2');
 
-        $query = "SELECT * FROM user WHERE Identifiant = '".$_POST['identifiant']."'";
+        $query = "SELECT * FROM user WHERE mail = '".$_POST['email']."'";
         $queryResult = mysqli_query($dbLink, $query);
         var_dump($queryResult);
         if($queryResult == false){
-            $query1 = 'INSERT INTO user (Identifiant, mail, Num_tel) VALUES (\'' . $id . '\', \''
-                . $email . '\',\'' . $email . '\')';
+            $query1 = 'INSERT INTO user (mail, Num_tel) VALUES (\'' . $email . '\', \''
+                . $num . '\')';
 
             if (!($dbResult = mysqli_query($dbLink, $query))) {
                 echo 'Erreur dans requête<br />';
