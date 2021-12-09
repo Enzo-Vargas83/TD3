@@ -3,4 +3,4 @@
     $rub1addr = 'page1.html';
 ?>
 
-<a href="<?php echo $rub1addr; ?>"><?php echo $rub1; ?></a
+<a href="<?php echo $rub1addr; ?>"><?php echo $rub1; ?></a>
