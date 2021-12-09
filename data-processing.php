@@ -8,7 +8,6 @@ if (!empty($_POST)) {
     $num = $_POST['numtel'];
     $genre = $_POST['sexe'];
     if ($action == 'mailer') {
-        header('Location : index.php');
         $file= 'data.txt';
         if(!($file = fopen($file, 'a+'))) {
             echo 'Erreur d\'ouverture';
@@ -18,7 +17,10 @@ if (!empty($_POST)) {
         fclose($file);
     } else {
         echo '<br/><strong>Bouton non géré !</strong><br/>';
-
     }
 }
+?>
+<?php
+    header('Location : index.php');
+    exit();
 ?>
