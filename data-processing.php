@@ -13,7 +13,6 @@ if (!empty($_POST)) {
         }
         fputs($file, 'id : ' . $id . ', email : ' . $email . PHP_EOL);
         fclose($file); ?>
-        <meta http-equiv="refresh" content="0; url=index.php">
         <?php
         $dbLink = mysqli_connect('mysql-vargas.alwaysdata.net', 'vargas', 'lolo83520', 'vargas_td2');
 
