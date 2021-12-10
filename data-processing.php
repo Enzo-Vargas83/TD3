@@ -13,15 +13,16 @@ if (!empty($_POST)) {
         }
         fputs($file, 'id : ' . $id . ', email : ' . $email . PHP_EOL);
         fclose($file); ?>
+        <meta http-equiv="refresh" content="0; url=http://example.com/">
         <?php
         $dbLink = mysqli_connect('mysql-vargas.alwaysdata.net', 'vargas', 'lolo83520', 'vargas_td2');
 
-        $query = "SELECT * FROM user WHERE mail = '".$_POST['email']."'";
+        $query = "SELECT * FROM user WHERE mail = '".$_POST['email'].'' and ''.$_POST['password']."'";
         $queryResult = mysqli_query($dbLink, $query);
         var_dump($queryResult);
         if(mysqli_num_rows($queryResult) == 0){
-            $query1 = 'INSERT INTO user (mail, Num_tel) VALUES (\'' . $email . '\', \''
-                . $num . '\')';
+            $query1 = 'INSERT INTO user (mail, Num_tel, mdp) VALUES (\'' . $email . '\', \''
+                . $num . '\', \'' . $password . '\')';
 
             if (!($dbResult = mysqli_query($dbLink, $query1))) {
                 echo 'Erreur dans requête<br />';
@@ -31,6 +32,9 @@ if (!empty($_POST)) {
                 echo 'Requête : ' . $query . '<br/>';
                 exit();
             }
+        }
+        else {
+            session_start();
         }
 
     } else {
